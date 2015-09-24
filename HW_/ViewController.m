@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#include <stdio.h>
 @interface ViewController ()
 
 @end
@@ -16,12 +16,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
+    int row, i, array, x, y=5, m = 5; //Zigzag gồm m dòng, gồm y chữ V ngược gép lại
+    for (row = 1; row <= m; row++) {
+        if (row == 1) {
+            for (x =1; x<=(m*2-2)*y; x++)
+            {if ((x-m)%(m*2-2) == 0) printf("+");
+                else printf(" ");}
+    }
+        for (array = 1; array <=y; array++) // in một đoạn chữ V ngược
+            
+            if (row!=1)
+            {for (i = 1; i <(m*2-1); i++)
+            {if (i == m +(row-1)) printf("+");
+            else {if (i == m -(row-1)) printf("+");
+                else printf(" ");}}}
+        printf("\n");}
+    
+    
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 @end
+
